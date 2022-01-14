@@ -1,0 +1,181 @@
+
+
+
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* A carta em sí,  a largura  e a altura e sua animação e trnsform-style: preserve 3d */
+.card
+{
+    width: 15vw;
+    height: 15vw;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    margin-bottom: 20px;
+}
+
+/* rotacionar a carta para mostrar o lado  de frente */
+
+.flip
+{
+    transform: rotateY(180Deg);
+}
+
+
+/* lado frontal da carta */
+.card_front
+{
+    transform: rotateY(180Deg);
+    background-color: #05c3ff;
+}
+
+/* lado de frente de baixo da carta */
+.card_front, .card_back
+{
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    backface-visibility: hidden;
+    cursor: pointer;
+}
+
+
+/* imagens */
+
+.icon
+{
+    width: 100%;
+    height: 100%;
+}
+
+/* gameover over the site */
+@keyframes descer{
+    from{top: -200px}
+    to{top: 0px}
+}
+
+#gameOver
+{
+    background-color: rgba(0,0,0,0.8) ;
+    width: 100%;
+    height:200px;
+    display: none;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation-duration: 3s;  
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+
+/* h1 do gameover seu estilo */
+
+.finalText
+{
+
+
+text-align: center;
+
+
+}
+
+
+
+
+/* buttao estilo */
+
+#resT
+{
+    background-color: yellow;
+    padding: 20px;
+    margin-top: 30px;
+    border: 2px solid black;
+    border-radius: 40px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 2s ease-out;
+}
+
+#resT:hover
+{
+
+    background-color: black;
+    color: yellow;
+    border-color: white;
+    font-weight: bold;
+
+
+}
+
+#gameBoard
+{
+
+    margin: auto;
+    display: grid;
+    grid-template: auto auto auto auto / auto auto auto auto ;
+    /* grid-column-gap: -110px; */
+    width: calc(100% - 60px);
+    height: 400px;
+    align-items: center;
+    justify-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+
+}
+
+
+@media screen and (min-width:600px)
+{
+
+#gameBoard
+{
+
+    justify-content: center;
+
+
+}
+
+
+.card
+{
+    margin-left: 30px;
+width: 100px;
+height: 100px;
+}
+
+}
+
+
+#merito
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffff00;
+    padding: 20px;
+    text-align: center;
+   font-size: 1.5rem
+}
+
